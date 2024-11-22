@@ -22,7 +22,7 @@ EOF`
 function readInfo {
 for line in $INFO
 do
-if [[ $(echo "${line}"|egrep 'XXX' >/dev/null;echo $?) = 0 ]]
+if [[ $(echo "${line}"|egrep 'STOP|ABEND' >/dev/null;echo $?) = 0 ]]
 then
 NAME=$(echo "${line}" | awk -F" " '{print $3}')
 STATS=$(echo "${line}" | awk -F" " '{print $2}')
